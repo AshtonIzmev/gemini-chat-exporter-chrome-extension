@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "description": "Chrome extension that exports the current Gemini chat as JSON.",
+  "engines": {
+    "node": "^22.22.2 || ^24.15.0 || >=26.0.0"
+  },
   "scripts": {
     "package": "./scripts/package-extension.sh",
     "security:check": "node scripts/verify-security-invariants.js",
