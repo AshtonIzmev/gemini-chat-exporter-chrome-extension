@@ -1,0 +1,14 @@
+{
+    "python.defaultInterpreterPath": "${workspaceFolder}/backend/.venv/bin/python",
+    "files.exclude": {
+        "**/node_modules/**": true,
+        "**/__pycache__/**": true,
+        "**/.git/**": true,
+        "**/.ruff_cache/**": true,
+        "**/.venv/**": true,
+        "**/frontend/dist/**": true,
+    },
+    "editor.tokenColorCustomizations": {
+        "textMateRules": []
+    }
+}

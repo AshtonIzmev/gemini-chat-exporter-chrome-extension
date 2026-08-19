@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gemini Chat Exporter</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main>
+      <header>
+        <span class="mark" aria-hidden="true">G</span>
+        <div>
+          <h1>Gemini Exporter</h1>
+          <p>Save the current conversation as JSON.</p>
+        </div>
+      </header>
+
+      <button id="export-button" type="button">
+        <span class="download-icon" aria-hidden="true">↓</span>
+        <span>Download current chat</span>
+      </button>
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+    </main>
+
+    <script src="../src/extractor.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>

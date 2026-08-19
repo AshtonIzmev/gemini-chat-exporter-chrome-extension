@@ -1,0 +1,111 @@
+:root {
+  color-scheme: light;
+  font-family: "Avenir Next", Avenir, sans-serif;
+  background: #f7f8f6;
+  color: #202124;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 330px;
+}
+
+main {
+  padding: 18px;
+  background:
+    linear-gradient(135deg, rgba(13, 111, 91, 0.08), transparent 48%),
+    #f7f8f6;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.mark {
+  display: grid;
+  flex: 0 0 38px;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border-radius: 8px;
+  background: #0d6f5b;
+  color: white;
+  font-family: Georgia, serif;
+  font-size: 21px;
+  font-weight: 700;
+}
+
+h1 {
+  margin: 0 0 2px;
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: 0;
+}
+
+header p {
+  margin: 0;
+  color: #666b67;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+button {
+  display: flex;
+  width: 100%;
+  min-height: 42px;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  border: 0;
+  border-radius: 7px;
+  background: #202124;
+  color: white;
+  cursor: pointer;
+  font: 600 13px/1 "Avenir Next", Avenir, sans-serif;
+}
+
+button:hover {
+  background: #343633;
+}
+
+button:focus-visible {
+  outline: 3px solid rgba(13, 111, 91, 0.35);
+  outline-offset: 2px;
+}
+
+button:disabled {
+  cursor: wait;
+  opacity: 0.62;
+}
+
+.download-icon {
+  font-size: 19px;
+  line-height: 1;
+}
+
+.status {
+  display: none;
+  margin: 12px 0 0;
+  color: #666b67;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.status.visible {
+  display: block;
+}
+
+.status.error {
+  color: #a12b22;
+}
+
+.status.success {
+  color: #0d6f5b;
+}

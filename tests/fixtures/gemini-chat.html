@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+  <head>
+    <base href="https://gemini.google.com/app/test-conversation">
+    <title>Example conversation - Google Gemini</title>
+  </head>
+  <body>
+    <div class="conversation-container" id="turn-one">
+      <user-query>
+        <div class="query-content" id="user-query-content-0">
+          <span class="framework-class" data-test-id="prompt">Compare these options.</span>
+          <button>Copy prompt</button>
+        </div>
+      </user-query>
+      <model-response>
+        <message-content>
+          <div class="markdown" _ngcontent-test="">
+            <p>The <strong>second</strong> option is best.</p>
+            <ul><li>Lower cost</li><li>Better range</li></ul>
+            <p><a href="/app/reference" onclick="steal()">Safe link</a></p>
+            <a href="javascript:alert(1)">Unsafe link</a>
+            <script>window.bad = true;</script>
+          </div>
+        </message-content>
+      </model-response>
+    </div>
+    <div class="conversation-container" id="turn-two">
+      <user-query>
+        <div class="query-content" id="user-query-content-1"><p>Show an example.</p></div>
+      </user-query>
+      <model-response>
+        <message-content>
+          <div class="markdown"><pre><code>const answer = 42;</code></pre></div>
+        </message-content>
+        <message-content class="hidden"><div class="markdown">Hidden draft</div></message-content>
+      </model-response>
+    </div>
+  </body>
+</html>
