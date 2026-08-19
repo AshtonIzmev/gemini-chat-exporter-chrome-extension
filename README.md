@@ -2,13 +2,17 @@
 
 A local Chrome extension that downloads the currently open Google Gemini conversation as a JSON file. It reads the rendered page only: it does not call private Gemini APIs, transmit data, or access other chats.
 
+**Full source code:** [github.com/AshtonIzmev/gemini-chat-exporter-chrome-extension](https://github.com/AshtonIzmev/gemini-chat-exporter-chrome-extension)
+
+Clone or download that repository to inspect the complete source, run the tests, perform an independent security review, and install the extension yourself with Chrome's **Load unpacked** feature.
+
 > [!CAUTION]
 >
 > # NEVER TRUST CHROME EXTENSIONS BLINDLY
 >
 > A Chrome extension can read or change sensitive information in every page covered by its permissions. A friendly store listing, many positive reviews, open-source branding, or a successful automated scan is **not proof that an extension is safe**.
 >
-> **Do not trust this extension merely because this README says it is safe.** Download the repository source, inspect it, and give the complete code to a security professional or your own trusted LLM for an independent security review. Ask it to explain every permission, every network-capable API, every script entry point, and every place user data could leave the browser. Treat an AI review as useful assistance, not a guarantee.
+> **Do not trust this extension merely because this README says it is safe.** Download the [complete source repository](https://github.com/AshtonIzmev/gemini-chat-exporter-chrome-extension), inspect it, and give the complete code to a security professional or your own trusted LLM for an independent security review. Ask it to explain every permission, every network-capable API, every script entry point, and every place user data could leave the browser. Treat an AI review as useful assistance, not a guarantee.
 >
 > For the strongest practical control, install an audited snapshot yourself with Chrome's **Load unpacked** feature. Re-review every update before installing it. If the source, permissions, packaged files, or behavior do not match what you reviewed, do not install it.
 >
@@ -18,7 +22,7 @@ A local Chrome extension that downloads the currently open Google Gemini convers
 
 ## Three-step safety review
 
-1. **Download the source:** Use a specific repository snapshot and do not include any private conversations or exports.
+1. **Download the source:** Clone or download a specific snapshot of the [full GitHub repository](https://github.com/AshtonIzmev/gemini-chat-exporter-chrome-extension). Do not include any private conversations or exports.
 2. **Ask your trusted LLM:** Attach the complete source and paste the ready-made [security review prompt](LLM_SECURITY_REVIEW_PROMPT.md).
 3. **Act on the verdict:** Only continue if every runtime file was reviewed, every permission is justified, no unexplained data transmission exists, and you accept the stated residual risks. Then install that same reviewed snapshot with **Load unpacked**.
 
@@ -51,13 +55,19 @@ No checklist eliminates all risk. The purpose is to make trust explicit, evidenc
 
 ### Recommended: install reviewed source
 
-1. Open `chrome://extensions` in Chrome.
-2. Enable **Developer mode**.
-3. Click **Load unpacked**.
-4. Select this repository folder.
-5. Pin **Gemini Chat Exporter** from Chrome's Extensions menu.
+1. Clone or download the [full source repository](https://github.com/AshtonIzmev/gemini-chat-exporter-chrome-extension).
+2. Review the exact snapshot you downloaded.
+3. Open `chrome://extensions` in Chrome.
+4. Enable **Developer mode**.
+5. Click **Load unpacked**.
+6. Select the reviewed repository folder.
+7. Pin **Gemini Chat Exporter** from Chrome's Extensions menu.
 
 Before loading it, complete the review in [docs/SECURITY_REVIEW.md](docs/SECURITY_REVIEW.md). Chrome may warn that developer-mode extensions can be unsafe. That warning is valid: installing from source gives you control over the files, but it does not make unreviewed source safe.
+
+### Verify a packaged ZIP
+
+The runtime-only `gemini-chat-exporter-v1.0.0.zip` can be checked against the MD5 and SHA-256 values in [RELEASE_CHECKSUMS.md](RELEASE_CHECKSUMS.md). Prefer SHA-256; MD5 is provided only for compatibility. A matching hash confirms file identity, not safety or authorship, so inspect the archive and review the source before loading it.
 
 ### Chrome Web Store installation
 

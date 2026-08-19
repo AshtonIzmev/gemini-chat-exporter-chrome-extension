@@ -1,3 +1,4 @@
 node_modules/
 .DS_Store
 examples/
+gemini-chat-exporter-v*.zip
