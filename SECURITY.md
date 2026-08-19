@@ -74,6 +74,18 @@ A reviewer should expect all of the following to remain true:
 
 If any invariant changes, treat the update as a new product and perform a complete review.
 
+## Automated controls
+
+The public [Security and integrity workflow](.github/workflows/security.yml) runs tests, dependency audit, project-specific privilege invariants, CodeQL analysis, pull-request dependency review, and reproducible packaging. Official GitHub actions are pinned to immutable commit SHAs, and [.github/dependabot.yml](.github/dependabot.yml) proposes reviewable updates.
+
+The project-specific gate can be run locally:
+
+```sh
+npm run security:check
+```
+
+It deliberately fails when the manifest gains permissions or privileged entry points, when runtime dependencies or remote popup resources appear, or when runtime JavaScript introduces known network, dynamic execution, storage, cookie, or sensitive browser APIs. These checks are narrow tripwires for this extension's current architecture, not a general proof of security. A malicious change could alter the checks themselves, so reviewers must inspect workflow and gate changes with the same skepticism as runtime code.
+
 ## Source installation security
 
 Installing from source avoids automatic substitution of an opaque package, but it is safe only when you:

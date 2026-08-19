@@ -1,5 +1,7 @@
 # Gemini Chat Exporter
 
+[![Security and integrity](https://github.com/AshtonIzmev/gemini-chat-exporter-chrome-extension/actions/workflows/security.yml/badge.svg)](https://github.com/AshtonIzmev/gemini-chat-exporter-chrome-extension/actions/workflows/security.yml)
+
 A local Chrome extension that downloads the currently open Google Gemini conversation as a JSON file. It reads the rendered page only: it does not call private Gemini APIs, transmit data, or access other chats.
 
 **Full source code:** [github.com/AshtonIzmev/gemini-chat-exporter-chrome-extension](https://github.com/AshtonIzmev/gemini-chat-exporter-chrome-extension)
@@ -27,6 +29,30 @@ Clone or download that repository to inspect the complete source, run the tests,
 3. **Act on the verdict:** Only continue if every runtime file was reviewed, every permission is justified, no unexplained data transmission exists, and you accept the stated residual risks. Then install that same reviewed snapshot with **Load unpacked**.
 
 This process is intentionally simple, but it is not a security guarantee. LLMs can miss vulnerabilities, source downloads can be tampered with, and later updates can change behavior. Repeat it for every version.
+
+## Automated security transparency
+
+The complete [Security and integrity workflow](.github/workflows/security.yml) is public and runs on every push to `main`, every pull request, and manual dispatch. It:
+
+- Enforces the exact `activeTab`, `downloads`, and `scripting` permission set.
+- Fails if persistent host access, background execution, remote resources, runtime dependencies, network APIs, dynamic code, or sensitive browser APIs appear.
+- Installs development dependencies with lifecycle scripts disabled.
+- Runs `npm audit`, the extractor tests, and CodeQL static analysis.
+- Reviews dependency changes on pull requests and rejects moderate-or-higher known vulnerabilities.
+- Builds the runtime-only ZIP reproducibly, publishes SHA-256 and MD5 values in the workflow summary, and uploads the inspected artifact.
+- Uses official GitHub actions pinned to immutable commit SHAs; Dependabot proposes visible updates to those pins and npm dependencies.
+
+Run the same project-specific checks locally:
+
+```sh
+npm ci --ignore-scripts
+npm audit --audit-level=high
+npm run security:check
+npm test
+npm run package
+```
+
+The badge reports whether these automated checks passed for the latest relevant commit. It is evidence, not certification: workflows can be incomplete, compromised, changed, or bypassed. Read the workflow, inspect its history, review the source, and verify the exact artifact you install.
 
 ## Why this warning exists
 
@@ -176,7 +202,9 @@ There is no service worker, content script that runs automatically, server compo
 
 ```sh
 npm install
+npm run security:check
 npm test
+npm run package
 ```
 
 The automated tests cover message order, metadata, rich HTML sanitization, unsafe markup, unsupported pages, and empty conversations. The current selectors were also checked against [examples/example1.html](examples/example1.html), which exports 9 user prompts and 9 Gemini responses.

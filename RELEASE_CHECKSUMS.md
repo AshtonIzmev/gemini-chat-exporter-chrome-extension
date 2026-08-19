@@ -6,12 +6,12 @@ Checksums for the locally generated runtime-only extension archive.
 
 Artifact: `gemini-chat-exporter-v1.0.0.zip`
 
-Size: `9053 bytes`
+Size: `14568 bytes`
 
 | Algorithm | Checksum                                                           |
 | --------- | ------------------------------------------------------------------ |
-| SHA-256   | `86e77a4d72d6a2afb81570196ff7a81a55b4f885f6d9de1146a81ae2618dcb03` |
-| MD5       | `5778c3714320633159bfee5804423651`                                 |
+| SHA-256   | `57524711f305e35602822d2d892cabfc245f56a66ff0639f109f385cbd7ded4b` |
+| MD5       | `6bfcd6c7020c03cacc794de90eac9f54`                                 |
 
 Verify on macOS:
 
@@ -28,6 +28,14 @@ md5sum gemini-chat-exporter-v1.0.0.zip
 ```
 
 The SHA-256 output must match the value above exactly. MD5 is included only for compatibility and accidental-corruption checks; it is not collision resistant and should not be treated as a security guarantee.
+
+Generate the same runtime-only archive from a reviewed source snapshot:
+
+```sh
+npm run package
+```
+
+The packaging script fixes file order and timestamps and stores files without compression so identical runtime sources produce a byte-identical ZIP suitable for checksum comparison.
 
 ## What the checksum proves
 
