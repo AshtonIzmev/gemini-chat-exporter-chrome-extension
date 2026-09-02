@@ -93,7 +93,7 @@ Before loading it, complete the review in [docs/SECURITY_REVIEW.md](docs/SECURIT
 
 ### Verify a packaged ZIP
 
-The runtime-only `gemini-chat-exporter-v1.0.0.zip` can be checked against the MD5 and SHA-256 values in [RELEASE_CHECKSUMS.md](RELEASE_CHECKSUMS.md). Prefer SHA-256; MD5 is provided only for compatibility. A matching hash confirms file identity, not safety or authorship, so inspect the archive and review the source before loading it.
+The runtime-only `gemini-chat-exporter-v1.0.1.zip` can be checked against the MD5 and SHA-256 values in [RELEASE_CHECKSUMS.md](RELEASE_CHECKSUMS.md). Prefer SHA-256; MD5 is provided only for compatibility. A matching hash confirms file identity, not safety or authorship, so inspect the archive and review the source before loading it.
 
 ### Chrome Web Store installation
 

@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Gemini Chat Exporter",
   "description": "Download the current Google Gemini conversation as JSON.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "permissions": [
     "activeTab",
     "downloads",

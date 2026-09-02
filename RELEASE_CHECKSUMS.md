@@ -2,29 +2,29 @@
 
 Checksums for the locally generated runtime-only extension archive.
 
-## Version 1.0.0
+## Version 1.0.1
 
-Artifact: `gemini-chat-exporter-v1.0.0.zip`
+Artifact: `gemini-chat-exporter-v1.0.1.zip`
 
-Size: `14568 bytes`
+Size: `14717 bytes`
 
 | Algorithm | Checksum                                                           |
 | --------- | ------------------------------------------------------------------ |
-| SHA-256   | `57524711f305e35602822d2d892cabfc245f56a66ff0639f109f385cbd7ded4b` |
-| MD5       | `6bfcd6c7020c03cacc794de90eac9f54`                                 |
+| SHA-256   | `a19e734b668f7157906f4e02e792068a86b8f15e0015322d4ed3bed6fa599bcc` |
+| MD5       | `f7f2860d9564de1367fe14cf7ac38b84`                                 |
 
 Verify on macOS:
 
 ```sh
-shasum -a 256 gemini-chat-exporter-v1.0.0.zip
-md5 gemini-chat-exporter-v1.0.0.zip
+shasum -a 256 gemini-chat-exporter-v1.0.1.zip
+md5 gemini-chat-exporter-v1.0.1.zip
 ```
 
 Verify on Linux:
 
 ```sh
-sha256sum gemini-chat-exporter-v1.0.0.zip
-md5sum gemini-chat-exporter-v1.0.0.zip
+sha256sum gemini-chat-exporter-v1.0.1.zip
+md5sum gemini-chat-exporter-v1.0.1.zip
 ```
 
 The SHA-256 output must match the value above exactly. MD5 is included only for compatibility and accidental-corruption checks; it is not collision resistant and should not be treated as a security guarantee.
