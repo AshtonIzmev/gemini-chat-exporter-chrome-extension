@@ -28,7 +28,8 @@ async function exportCurrentChat() {
 
   try {
     const tab = await activeTab();
-    if (!tab.url?.startsWith("https://gemini.google.com/app/")) {
+    const conversationUrlPattern = /^https:\/\/gemini\.google\.com\/(?:app\/[^/?#]+|gem\/[^/?#]+\/[^/?#]+)\/?(?:[?#]|$)/;
+    if (!conversationUrlPattern.test(tab.url || "")) {
       throw new Error("Open a Gemini conversation in this tab first.");
     }
 

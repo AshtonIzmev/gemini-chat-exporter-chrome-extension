@@ -32,6 +32,18 @@ test("extracts ordered messages and conversation metadata", () => {
   dom.window.close();
 });
 
+test("extracts conversations opened through a Gem URL", () => {
+  const fixture = fs.readFileSync(path.join(__dirname, "fixtures/gemini-chat.html"), "utf8");
+  const dom = useDom(fixture, "https://gemini.google.com/gem/1dc8c6a0f668/4a9abe18cc37ca3b");
+
+  const result = extractGeminiChat();
+
+  assert.equal(result.conversationId, "4a9abe18cc37ca3b");
+  assert.equal(result.messages.length, 4);
+
+  dom.window.close();
+});
+
 test("preserves semantic HTML and removes page-specific or unsafe markup", () => {
   const fixture = fs.readFileSync(path.join(__dirname, "fixtures/gemini-chat.html"), "utf8");
   const dom = useDom(fixture);

@@ -122,7 +122,7 @@ function extractGeminiChat() {
     };
   }
 
-  const match = location.pathname.match(/^\/app\/([^/?#]+)/);
+  const match = location.pathname.match(/^\/(?:app\/([^/]+)|gem\/[^/]+\/([^/]+))\/?$/);
   if (location.hostname !== "gemini.google.com" || !match) {
     throw new Error("Open a Gemini conversation before exporting.");
   }
@@ -153,7 +153,7 @@ function extractGeminiChat() {
     source: "Google Gemini",
     title,
     url: location.href,
-    conversationId: match[1],
+    conversationId: match[1] || match[2],
     exportedAt: new Date().toISOString(),
     messages
   };
